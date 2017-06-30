@@ -3,6 +3,8 @@ using FluentAssertions;
 
 namespace PlainConcepts.Course.FizzBuzz
 {
+    using PlainConcepts.Course.FizzBuzz.Console;
+
     [TestClass]
     public class FizzBuzzer
     {

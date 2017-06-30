@@ -6,14 +6,11 @@ namespace PlainConcepts.Course.FizzBuzz.Console
     {
         static void Main(string[] args)
         {
-            var printer = new Printer();
-            for (var i = 1; i < 101; i++)
-            {
-                System.Console.WriteLine(printer.Print(i));
-            }
+            var iterator = new Iterator();
+            iterator.Iterate();
 
-            
             do{} while (System.Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
+
     }
 }

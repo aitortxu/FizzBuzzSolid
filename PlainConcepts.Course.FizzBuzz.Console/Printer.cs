@@ -1,4 +1,4 @@
-﻿namespace PlainConcepts.Course.FizzBuzz
+﻿namespace PlainConcepts.Course.FizzBuzz.Console
 {
     public class Printer
     {

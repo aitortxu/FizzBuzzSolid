@@ -14,6 +14,10 @@
             {
                 result = result + "Buzz";
             }
+            if (number % 7 == 0)
+            {
+                result = result + "Cua";
+            }
             if (result == "")
             {
                 result = number.ToString();

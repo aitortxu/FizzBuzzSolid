@@ -20,7 +20,7 @@ namespace PlainConcepts.Course.FizzBuzz
         [Test]
         [TestCase(3)]
         [TestCase(9)]
-        [TestCase(21)]
+        [TestCase(24)]
         [TestCase(33)]
         public void ShouldPrintFizz_IfTheNumberIsMultipleOfThree(int number)
         {
@@ -32,12 +32,23 @@ namespace PlainConcepts.Course.FizzBuzz
         [TestCase(5)]
         [TestCase(10)]
         [TestCase(25)]
-        [TestCase(35)]
+        [TestCase(40)]
         public void ShouldPrintBuzz_IfTheNumberIsMultipleOfFive(int number)
         {
             var printer = new Printer();
             var result = printer.Print(number);
             result.Should().Be("Buzz");
+        }
+        [Test]
+        [TestCase(7)]
+        [TestCase(14)]
+        [TestCase(28)]
+        [TestCase(49)]
+        public void ShouldPrintCua_IfTheNumberIsMultipleOfSeven(int number)
+        {
+            var printer = new Printer();
+            var result = printer.Print(number);
+            result.Should().Be("Cua");
         }
         [Test]
         [TestCase(15)]
@@ -49,6 +60,23 @@ namespace PlainConcepts.Course.FizzBuzz
             var printer = new Printer();
             var result = printer.Print(number);
             result.Should().Be("FizzBuzz");
+        }
+
+        [Test]
+        [TestCase(21)]
+        public void ShouldPrintFizzCua_IfTheNumberIsMultipleOfThreeAndSeven(int number)
+        {
+            var printer = new Printer();
+            var result = printer.Print(number);
+            result.Should().Be("FizzCua");
+        }
+
+        [TestCase(105)]
+        public void ShouldPrintFizzBuzzCua_IfTheNumberIsMultipleOfThreeAndFiveAndSeven(int number)
+        {
+            var printer = new Printer();
+            var result = printer.Print(number);
+            result.Should().Be("FizzBuzzCua");
         }
     }
 }

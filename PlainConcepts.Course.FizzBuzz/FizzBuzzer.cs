@@ -3,12 +3,13 @@ using FluentAssertions;
 
 namespace PlainConcepts.Course.FizzBuzz
 {
+    using NUnit.Framework;
     using PlainConcepts.Course.FizzBuzz.Console;
 
-    [TestClass]
+    [TestFixture]
     public class FizzBuzzer
     {
-        [TestMethod]
+        [Test]
         public void ShouldPrintTheNumber_IfTheNumberDoesntFitAnyCondition()
         {
             var printer = new Printer();
@@ -16,25 +17,37 @@ namespace PlainConcepts.Course.FizzBuzz
             result.Should().Be("1");
         }
 
-        [TestMethod]
-        public void ShouldPrintFizz_IfTheNumberIsMultipleOfThree()
+        [Test]
+        [TestCase(3)]
+        [TestCase(9)]
+        [TestCase(21)]
+        [TestCase(33)]
+        public void ShouldPrintFizz_IfTheNumberIsMultipleOfThree(int number)
         {
             var printer = new Printer();
-            var result = printer.Print(3);
+            var result = printer.Print(number);
             result.Should().Be("Fizz");
         }
-        [TestMethod]
-        public void ShouldPrintBuzz_IfTheNumberIsMultipleOfFive()
+        [Test]
+        [TestCase(5)]
+        [TestCase(10)]
+        [TestCase(25)]
+        [TestCase(35)]
+        public void ShouldPrintBuzz_IfTheNumberIsMultipleOfFive(int number)
         {
             var printer = new Printer();
-            var result = printer.Print(5);
+            var result = printer.Print(number);
             result.Should().Be("Buzz");
         }
-        [TestMethod]
-        public void ShouldPrintFizzBuzz_IfTheNumberIsMultipleOfThreeAndFive()
+        [Test]
+        [TestCase(15)]
+        [TestCase(30)]
+        [TestCase(45)]
+        [TestCase(60)]
+        public void ShouldPrintFizzBuzz_IfTheNumberIsMultipleOfThreeAndFive(int number)
         {
             var printer = new Printer();
-            var result = printer.Print(15);
+            var result = printer.Print(number);
             result.Should().Be("FizzBuzz");
         }
     }

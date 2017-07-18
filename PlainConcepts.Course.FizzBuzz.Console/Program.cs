@@ -6,7 +6,7 @@ namespace PlainConcepts.Course.FizzBuzz.Console
     {
         static void Main(string[] args)
         {
-            var iterator = new Iterator();
+            var iterator = new Iterator(new Printer());
             iterator.Iterate();
 
             do{} while (System.Console.ReadKey(true).Key != ConsoleKey.Escape);

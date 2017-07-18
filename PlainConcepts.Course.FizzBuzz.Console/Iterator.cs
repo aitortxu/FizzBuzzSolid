@@ -2,9 +2,14 @@
 {
     public class Iterator
     {
-        public void Iterate()
+        private IPrinter printer;
+
+        public Iterator(IPrinter printer)
         {
-            var printer = new Printer();
+            this.printer = printer;
+        }
+        public void Iterate()
+        {            
             for (var i = 1; i < 101; i++)
             {
                 System.Console.WriteLine(printer.Print(i));

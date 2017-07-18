@@ -7,7 +7,7 @@ namespace PlainConcepts.Course.FizzBuzz
     using PlainConcepts.Course.FizzBuzz.Console;
 
     [TestFixture]
-    public class FizzBuzzer
+    public class FizzBuzzerTests
     {
         [Test]
         public void ShouldPrintTheNumber_IfTheNumberDoesntFitAnyCondition()

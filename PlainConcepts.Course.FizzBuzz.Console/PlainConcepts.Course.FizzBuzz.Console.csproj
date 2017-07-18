@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IPrinter.cs" />
     <Compile Include="Iterator.cs" />
     <Compile Include="Printer.cs" />
     <Compile Include="Program.cs" />

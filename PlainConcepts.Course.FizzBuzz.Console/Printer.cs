@@ -1,6 +1,6 @@
 ﻿namespace PlainConcepts.Course.FizzBuzz.Console
 {
-    public class Printer
+    public class Printer : IPrinter
     {
         public string Print(int number)
         {

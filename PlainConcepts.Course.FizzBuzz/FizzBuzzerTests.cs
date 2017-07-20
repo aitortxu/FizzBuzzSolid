@@ -15,9 +15,9 @@ namespace PlainConcepts.Course.FizzBuzz
         public FizzBuzzerTests()
         {
             printer = new Printer(new Collection<IPrinterModificator>() {
-                new PrinterModificatorFizz(),
-                new PrinterModificatorBuzz(),
-                new PrinterModificatorCua()
+                 new PrinterModificator(3, "Fizz"),
+                new PrinterModificator(5, "Buzz"),
+                new PrinterModificator(7, "Cua")
             });
         }
         [Test]

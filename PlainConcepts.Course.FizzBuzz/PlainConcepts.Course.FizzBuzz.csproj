@@ -65,6 +65,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationReader.cs" />
+    <Compile Include="PrinterModificatorTest.cs" />
     <Compile Include="IteratorTests.cs" />
     <Compile Include="FizzBuzzerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

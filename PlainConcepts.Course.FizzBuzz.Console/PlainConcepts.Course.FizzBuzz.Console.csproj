@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,19 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationReader.cs" />
     <Compile Include="IPrinter.cs" />
     <Compile Include="IPrinterModificator.cs" />
     <Compile Include="Iterator.cs" />
     <Compile Include="Printer.cs" />
     <Compile Include="PrinterModificator.cs" />
-    <Compile Include="PrinterModificatorCua.cs" />
-    <Compile Include="PrinterModificatorBuzz.cs" />
-    <Compile Include="PrinterModificatorFizz.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

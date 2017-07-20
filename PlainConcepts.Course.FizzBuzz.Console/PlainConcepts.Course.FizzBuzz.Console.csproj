@@ -43,8 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IPrinter.cs" />
+    <Compile Include="IPrinterModificator.cs" />
     <Compile Include="Iterator.cs" />
     <Compile Include="Printer.cs" />
+    <Compile Include="PrinterModificator.cs" />
+    <Compile Include="PrinterModificatorCua.cs" />
+    <Compile Include="PrinterModificatorBuzz.cs" />
+    <Compile Include="PrinterModificatorFizz.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

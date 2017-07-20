@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 
 namespace PlainConcepts.Course.FizzBuzz.Console
 {
@@ -6,7 +7,11 @@ namespace PlainConcepts.Course.FizzBuzz.Console
     {
         static void Main(string[] args)
         {
-            var iterator = new Iterator(new Printer());
+            var iterator = new Iterator(new Printer(new Collection<IPrinterModificator>() {
+                new PrinterModificatorFizz(),
+                new PrinterModificatorBuzz(),
+                new PrinterModificatorCua()
+            }));
             iterator.Iterate();
 
             do{} while (System.Console.ReadKey(true).Key != ConsoleKey.Escape);

@@ -1,23 +1,24 @@
-﻿namespace PlainConcepts.Course.FizzBuzz.Console
+﻿using System.Collections.Generic;
+
+namespace PlainConcepts.Course.FizzBuzz.Console
 {
     public class Printer : IPrinter
     {
+        private ICollection<IPrinterModificator> printerModificators;
+
+        public Printer(ICollection<IPrinterModificator> printerModificators)
+        {
+            this.printerModificators = printerModificators;
+        }
         public string Print(int number)
         {
             var result = "";
 
-            if (number%3 == 0)
+            foreach (var printerModificator in printerModificators)
             {
-                result =  "Fizz";
-            }
-            if (number % 5 == 0)
-            {
-                result = result + "Buzz";
-            }
-            if (number % 7 == 0)
-            {
-                result = result + "Cua";
-            }
+                result = result + printerModificator.Print(number);
+            }       
+            
             if (result == "")
             {
                 result = number.ToString();

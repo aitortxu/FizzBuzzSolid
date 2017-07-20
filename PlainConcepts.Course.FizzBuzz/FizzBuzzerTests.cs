@@ -5,14 +5,24 @@ namespace PlainConcepts.Course.FizzBuzz
 {
     using NUnit.Framework;
     using PlainConcepts.Course.FizzBuzz.Console;
+    using System.Collections.ObjectModel;
 
     [TestFixture]
     public class FizzBuzzerTests
     {
+        private Printer printer;
+
+        public FizzBuzzerTests()
+        {
+            printer = new Printer(new Collection<IPrinterModificator>() {
+                new PrinterModificatorFizz(),
+                new PrinterModificatorBuzz(),
+                new PrinterModificatorCua()
+            });
+        }
         [Test]
         public void ShouldPrintTheNumber_IfTheNumberDoesntFitAnyCondition()
         {
-            var printer = new Printer();
             var result = printer.Print(1);
             result.Should().Be("1");
         }
@@ -24,7 +34,6 @@ namespace PlainConcepts.Course.FizzBuzz
         [TestCase(33)]
         public void ShouldPrintFizz_IfTheNumberIsMultipleOfThree(int number)
         {
-            var printer = new Printer();
             var result = printer.Print(number);
             result.Should().Be("Fizz");
         }
@@ -35,7 +44,6 @@ namespace PlainConcepts.Course.FizzBuzz
         [TestCase(40)]
         public void ShouldPrintBuzz_IfTheNumberIsMultipleOfFive(int number)
         {
-            var printer = new Printer();
             var result = printer.Print(number);
             result.Should().Be("Buzz");
         }
@@ -46,7 +54,6 @@ namespace PlainConcepts.Course.FizzBuzz
         [TestCase(49)]
         public void ShouldPrintCua_IfTheNumberIsMultipleOfSeven(int number)
         {
-            var printer = new Printer();
             var result = printer.Print(number);
             result.Should().Be("Cua");
         }
@@ -57,7 +64,6 @@ namespace PlainConcepts.Course.FizzBuzz
         [TestCase(60)]
         public void ShouldPrintFizzBuzz_IfTheNumberIsMultipleOfThreeAndFive(int number)
         {
-            var printer = new Printer();
             var result = printer.Print(number);
             result.Should().Be("FizzBuzz");
         }
@@ -66,7 +72,6 @@ namespace PlainConcepts.Course.FizzBuzz
         [TestCase(21)]
         public void ShouldPrintFizzCua_IfTheNumberIsMultipleOfThreeAndSeven(int number)
         {
-            var printer = new Printer();
             var result = printer.Print(number);
             result.Should().Be("FizzCua");
         }
@@ -74,7 +79,6 @@ namespace PlainConcepts.Course.FizzBuzz
         [TestCase(105)]
         public void ShouldPrintFizzBuzzCua_IfTheNumberIsMultipleOfThreeAndFiveAndSeven(int number)
         {
-            var printer = new Printer();
             var result = printer.Print(number);
             result.Should().Be("FizzBuzzCua");
         }
